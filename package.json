@@ -1,0 +1,27 @@
+{
+  "name": "material-vue-lite",
+  "version": "0.1.0",
+  "author": "Paolo Uy",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "style": "./dist/style.css",
+  "main": "./dist/material-vue-lite.umd.js",
+  "module": "./dist/material-vue-lite.es.js",
+  "scripts": {
+    "dev": "vite --config vite.dev.config.js",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "sass": "^1.55.0",
+    "vite": "^3.1.0"
+  },
+  "dependencies": {
+    "destyle.css": "^3.0.2"
+  }
+}

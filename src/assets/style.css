@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..800&display=swap');
+@import 'destyle.css';
+@import './variables.css';
+
+body {
+  line-height: 1.5;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: #fff;
+  font-family: 'Roboto Flex', sans-serif;
+  user-select: none;
+}

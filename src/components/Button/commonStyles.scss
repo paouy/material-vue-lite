@@ -1,0 +1,70 @@
+.mv-button {
+  color: var(--color);
+  background-color: var(--background-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-align: center;
+  padding: 0 1.5rem;
+  border-radius: 1.25rem;
+  width: fit-content;
+  height: 2.5rem;
+  position: relative;
+  transition: background-color 0.15s, opacity 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+
+  &:active:hover:not(:disabled) {
+    box-shadow: none;
+    opacity: 0.88;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.92;
+  }
+
+  &:disabled {
+    opacity: 0.12;
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--loading {
+    color: transparent;
+    pointer-events: none;
+
+    &::after {
+      display: block;
+      content: '';
+      margin: 0 auto;
+      width: 1.25rem;
+      height: 1.25rem;
+      border: 3px solid transparent;
+      border-left-color: var(--spinner-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 0.625rem;
+      left: 0;
+      right: 0;
+      animation: 0.86s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite mv-loading-button;
+    }
+  }
+}
+
+@keyframes mv-loading-button {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[inert] .mv-button:not(.mv-button--loading),
+[disabled] .mv-button:not(.mv-button--loading),
+.mv-button--disabled {
+  opacity: 0.12;
+  pointer-events: none;
+
+  &:is(.mv-text-button, .mv-outlined-button) {
+    opacity: 0.38;
+  }
+}
