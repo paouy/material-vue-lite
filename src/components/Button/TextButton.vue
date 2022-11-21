@@ -6,20 +6,20 @@ const props = defineProps({
 </script>
 
 <template>
-  <router-link class="mv-button mv-text-button" :to="to" :inert="props.disabled" v-if="to">
-    <slot></slot>
-  </router-link>
-
-  <button class="mv-button mv-text-button" type="button" :disabled="props.disabled" v-else>
+  <button class="mv-button mv-text-button" type="button" :disabled="props.disabled" v-if="!to">
     <slot></slot>
   </button>
+  
+  <router-link class="mv-button mv-text-button" :to="to" :inert="props.disabled" v-else>
+    <slot></slot>
+  </router-link>
 </template>
 
 <style lang="scss">
 @import './commonStyles.scss';
 
 .mv-text-button {
-  padding: 0 0.75rem;
+  padding: 0 0.75rem !important;
   --color: var(--primary-color);
   --background-color: none;
 
