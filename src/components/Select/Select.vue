@@ -6,6 +6,7 @@ const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
   modelValue: [Number, String],
   label: String,
+  options: Array,
   helper: String,
   required: Boolean,
   disabled: Boolean,
@@ -44,7 +45,17 @@ const computedValue = computed({
       :required="props.required"
       :disabled="props.readonly || props.disabled"
     >
-      <option :value="null" v-if="!props.required"></option>
+      <option
+        :value="null"
+        v-if="!props.required && props.options?.length"
+      ></option>
+      <option
+        v-for="option in props.options"
+        :key="option.value || option"
+        :value="option.value || option"
+      >
+        {{ option.label || option}}
+      </option>
       <slot/>
     </select>
     <label>
@@ -53,7 +64,7 @@ const computedValue = computed({
     <small v-if="props.helper">
       {{ props.helper }}
     </small>
-    <div class="select__outline"></div>
+    <div class="mv-select__outline"></div>
   </div>
 </template>
 

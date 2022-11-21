@@ -17,13 +17,13 @@ const rootClasses = computed(() => {
 </script>
 
 <template>
-  <router-link :class="rootClasses" :to="to" :inert="props.disabled" v-if="to">
-    <slot></slot>
-  </router-link>
-
-  <button :class="rootClasses" :type="props.type" :disabled="props.disabled" v-else>
+  <button :class="rootClasses" :type="props.type" :disabled="props.disabled" v-if="to">
     <slot></slot>
   </button>
+
+  <router-link :class="rootClasses" :to="to" :inert="props.disabled" v-else>
+    <slot></slot>
+  </router-link>
 </template>
 
 <style lang="scss">
