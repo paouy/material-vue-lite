@@ -90,6 +90,11 @@ const computedValue = computed({
     flex: 1 0 0;
     height: 3.5rem;
 
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px var(--background-color) inset;
+      -webkit-text-fill-color: var(--text-color);
+    }
+
     &:focus {
       outline: none;
     }
