@@ -93,6 +93,11 @@ const computedValue = computed({
     height: 3.5rem;
     cursor: pointer;
 
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px var(--background-color) inset;
+      -webkit-text-fill-color: var(--text-color);
+    }
+
     option {
       color: #000;
     }
