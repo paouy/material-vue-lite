@@ -83,7 +83,7 @@ const computedValue = computed({
 
     &:checked {
       border-color: var(--primary-color);
-      outline: 3.5px solid #fff;
+      outline: 3.5px solid var(--background-color);
       outline-offset: -5px;
       background-color: var(--primary-color);
 

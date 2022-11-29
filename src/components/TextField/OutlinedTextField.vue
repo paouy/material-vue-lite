@@ -75,7 +75,7 @@ const computedValue = computed({
   label {
     color: var(--muted-color);
     padding: 0 0.25rem;
-    background: #fff;
+    background: var(--background-color);
     position: absolute;
     top: 1rem;
     left: 0.75rem;

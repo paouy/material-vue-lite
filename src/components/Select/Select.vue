@@ -76,7 +76,7 @@ const computedValue = computed({
   label {
     color: var(--muted-color);
     padding: 0 0.25rem;
-    background: #fff;
+    background: var(--background-color);
     position: absolute;
     top: 1rem;
     left: 0.75rem;
@@ -91,6 +91,11 @@ const computedValue = computed({
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="%235f6368"><path d="m12 15-5-5h10Z"/></svg>') no-repeat calc(100% - 0.75rem) center;
     width: 100%;
     height: 3.5rem;
+    cursor: pointer;
+
+    option {
+      color: #000;
+    }
 
     &:focus {
       color: var(--dark-text-color);
